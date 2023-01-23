@@ -19,7 +19,7 @@ namespace SnakeAndLadder
             while(position<100)
             {
                 int diceRoll = random.Next(1, 7);
-                //Console.WriteLine("Dice Roll= " + diceRoll);
+                Console.WriteLine("Dice Roll= " + diceRoll);
                 int choice = random.Next(0, 3);
                 switch (choice)
                 {
@@ -39,11 +39,14 @@ namespace SnakeAndLadder
                     case ladder:
                         position += diceRoll;
                         Console.WriteLine("Ladder");
-                        if(position>=100)
-                        {
-                            position = 100;
-                            Console.WriteLine("Player 1 position : " + position);
+                        if(position==100)
+                        {                          
                             Console.WriteLine("player1 Wins");
+                        }
+                        else if(position>100)
+                        {
+                            position-=diceRoll;
+                            Console.WriteLine("Position is above 100; doesn't Count");
                         }
                         else
                         {
