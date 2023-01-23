@@ -14,12 +14,14 @@ namespace SnakeAndLadder
             const int ladder = 1;
             const int NoGame= 2;
             int position = 0;
+            int diceCount = 0;
             Random random= new Random();
             
             while(position<100)
             {
                 int diceRoll = random.Next(1, 7);
                 Console.WriteLine("Dice Roll= " + diceRoll);
+                diceCount++;
                 int choice = random.Next(0, 3);
                 switch (choice)
                 {
@@ -58,8 +60,8 @@ namespace SnakeAndLadder
                         Console.WriteLine("Player 1 position : " + position);
                         break;
                 }
-            
             }
+            Console.WriteLine("Dice Count to Win the Game: "+diceCount);
         }
     }
 }
